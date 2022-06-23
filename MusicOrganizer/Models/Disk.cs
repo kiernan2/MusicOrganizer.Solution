@@ -4,19 +4,26 @@ namespace MusicOrganizer.Models
 {
   public class Disk
   {
-    public string Description { get; set; }
+    public string Name { get; set; }
+    public int Id { get; }
     private static List<Disk> _instances = new List<Disk>();
-    public Disk(string description)
+    public List<Song> Songs { get; set; }
+
+    public Disk(string diskName)
     {
-      Description = description;
+      Name = diskName;
       _instances.Add(this);
       Id = _instances.Count;
     }
-    public static Item Find(int searchId)
+    public void AddSong(Song song)
+    {
+      Songs.Add(song);
+    }
+    public static Disk Find(int searchId)
     {
       return _instances[searchId - 1];
     }
-    public static List<Item> GetAll()
+    public static List<Disk> GetAll()
     {
       return _instances;
     }

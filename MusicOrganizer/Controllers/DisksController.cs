@@ -4,12 +4,14 @@ using System.Collections.Generic;
 
 namespace MusicOrganizer.Controllers
 {
-  public class HomeController : Controller
+  public class DiskController : Controller
   {
-    [HttpGet("/")]
+
+    [HttpPost("/disk")]
     public ActionResult Index()
     {
-      return View();
+      List<Disk> allDisk = Disk.GetAll();
+      return View(allDisk);
     }
   }
 }

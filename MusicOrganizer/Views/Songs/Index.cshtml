@@ -1,0 +1,19 @@
+@using MusicOrganizer.Models;
+
+<h1>Music Organizer</h1>
+
+@if (Model.Count == 0)
+{
+  <p>There are no items in the list.</p>
+}
+<ul>
+  @foreach (Song song in Model)
+  {
+    <li><a href="/songs/@song.Id">@song.Description</a></li>
+  }
+</ul>
+<a href="/items/new">Add a new items.</a>
+
+<form action="/items/new" method="post">
+  <button type="submit" name="button">Clear All Items</button>
+</form>

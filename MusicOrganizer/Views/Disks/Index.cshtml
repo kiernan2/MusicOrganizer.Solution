@@ -6,9 +6,10 @@
 {
   <p>There are no items in the list.</p>
 }
-<ul>
+
   @foreach (Disk disk in Model)
   {
     <li><a href="/disks/@disk.Id">@disk.Name</a></li>
   }
-</ul>
+
+<p><a href="/">Back home</a></p>

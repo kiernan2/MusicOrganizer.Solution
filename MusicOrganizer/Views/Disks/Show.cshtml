@@ -1,0 +1,10 @@
+@using MusicOrganizer.Models;
+
+<h3>Here all the items in this category:</h3>
+
+<ol>
+  @foreach (Song song in @Model.Songs)
+  {
+    <li><a href="/categories/@Model.Id/songs/@song.Id">@song.Description</a></li>
+  }
+</ol>

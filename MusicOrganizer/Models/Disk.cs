@@ -14,6 +14,7 @@ namespace MusicOrganizer.Models
       Name = diskName;
       _instances.Add(this);
       Id = _instances.Count;
+      Songs = new List<Song>();
     }
     public void AddSong(Song song)
     {

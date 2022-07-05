@@ -1,0 +1,13 @@
+@using MusicOrganizer.Models;
+
+<h2>Artist Search: </h2>
+
+<ul>
+  @foreach (Disk disk in @Model)
+  {
+    if (@Model.Artist == searchArtist)
+    {
+      <li><a href="/disks/@Model.Id">@Model.Name</a></li>
+    }
+  }
+</ul>

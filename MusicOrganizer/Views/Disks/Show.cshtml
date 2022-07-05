@@ -1,14 +1,16 @@
 @using MusicOrganizer.Models;
 
-<h3>Here all the items in this category:</h3>
+<h3>Here all the songs in this disk:</h3>
 
 <ol>
   @foreach (Song song in @Model.Songs)
   {
-    <li><a href="/categories/@Model.Id/songs/@song.Id">@song.Description</a></li>
+    <li><a href="/disks/@Model.Id/songs/@song.Id">@song.Description</a></li>
   }
 </ol>
 
-<p><a href="/disks/Model.Id/song/new">Add a new song</a></p>
+<p>By @Model.Artist</p>
+
+<p><a href="/disks/@Model.Id/songs/new">Add a new song</a></p>
 <p><a href="/disks">Return to disk list</a></p>
 <p><a href="/">Return to Main Page</a></p>

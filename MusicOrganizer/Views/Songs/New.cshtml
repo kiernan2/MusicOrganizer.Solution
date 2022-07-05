@@ -1,5 +1,7 @@
-<form action="/songs" method="post">
-  <label for="description">Add a new song</label>
-  <input id="description" name="description" type="text">
+
+<form action="/disks/@Model.Id/songs" method="post">
+  <input id="diskId" name="diskId" type="hidden" value="@Model.Id">
+  <label for="songDescription">Add a new song</label>
+  <input id="songDescription" name="songDescription" type="text">
   <button type="submit">Submit</button>
 </form>

@@ -1,6 +1,9 @@
+@using MusicOrganizer.Models;
+
 <h1>Song List Details: </h1>
 
-<h2>@Model.Description</h2>
+<h2>@Model["song"].Description</h2>
+<h3>Disk: @Model["disk"].Name</h3>
 
-<a href="/songs/new">Add another song</a>
-<a href="/songs">View all items</a>
+<a href='/disks/@Model["disk"].Id/songs/new'>Add another song</a>
+<a href='/disks/@Model["disk"].Id'>View disk</a>

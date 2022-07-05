@@ -29,10 +29,16 @@ namespace MusicOrganizer.Controllers
     }
 
     [HttpPost("disks")]
-    public ActionResult Create(string diskName)
+    public ActionResult Create(string diskName, string artistName)
     {
-      Disk newDisk = new Disk(diskName);
+      Disk newDisk = new Disk(diskName, artistName);
       return RedirectToAction("Index");
+    }
+
+    [HttpGet("/disks/search")]
+    public ActionResult Search(string searchArtist)
+    {
+      return View(searchArtist);
     }
 
     [HttpPost("/disks/{diskId}/songs")]

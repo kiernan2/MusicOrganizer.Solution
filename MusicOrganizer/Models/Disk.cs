@@ -6,12 +6,14 @@ namespace MusicOrganizer.Models
   {
     public string Name { get; set; }
     public int Id { get; }
+    public string Artist { get; set; }
     private static List<Disk> _instances = new List<Disk>();
     public List<Song> Songs { get; set; }
 
-    public Disk(string diskName)
+    public Disk(string diskName, string artistName)
     {
       Name = diskName;
+      Artist = artistName;
       _instances.Add(this);
       Id = _instances.Count;
       Songs = new List<Song>();

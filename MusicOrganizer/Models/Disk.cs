@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System;
 
 namespace MusicOrganizer.Models
 {
@@ -25,6 +26,11 @@ namespace MusicOrganizer.Models
     public static Disk Find(int searchId)
     {
       return _instances[searchId - 1];
+    }
+    public static List<Disk> FindArtist(string searchArtist)
+    {
+      List<Disk> results = _instances.FindAll(d => d.Artist == searchArtist);
+      return results;
     }
     public static List<Disk> GetAll()
     {

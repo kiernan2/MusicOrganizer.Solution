@@ -38,7 +38,15 @@ namespace MusicOrganizer.Controllers
     [HttpGet("/disks/search")]
     public ActionResult Search(string searchArtist)
     {
-      return View(searchArtist);
+      List<Disk> disks = Disk.FindArtist(searchArtist);
+      return View(disks);
+    }
+
+    [HttpPost("/disks/delete")]
+    public ActionResult DeleteAll()
+    {
+      Disk.ClearAll();
+      return View();
     }
 
     [HttpPost("/disks/{diskId}/songs")]

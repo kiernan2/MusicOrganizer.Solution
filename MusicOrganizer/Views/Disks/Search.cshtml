@@ -3,11 +3,10 @@
 <h2>Artist Search: </h2>
 
 <ul>
-  @foreach (Disk disk in @Model)
+  @foreach (Disk disk in Model)
   {
-    if (@Model.Artist == searchArtist)
-    {
-      <li><a href="/disks/@Model.Id">@Model.Name</a></li>
-    }
+    <li><a href="/disks/@disk.Id">@disk.Name</a></li>
   }
 </ul>
+
+<p><a href="/">Back home</a></p>

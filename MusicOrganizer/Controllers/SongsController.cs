@@ -7,7 +7,7 @@ namespace MusicOrganizer.Controllers
   public class SongsController : Controller
   {
     [HttpPost("/songs/delete")]
-    public ActionResult DeleteAll()
+    public ActionResult Delete()
     {
       Song.ClearAll();
       return View();
